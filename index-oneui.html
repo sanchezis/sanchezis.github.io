@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+
+    <script>
+    ons.ready(function() {
+    // Init code here
+    });
+    </script>
+    </head>
+    <body>
+
+
+
+
+
+    <ons-navigator>
+    <ons-page>
+    
+    
+    
+      <ons-label>Hello World!</ons-label> 
+
+   
+
+    <script>
+      $(function(){
+        // Initialization code
+        $('ons-button').on('click', function(e) {
+          ons.notification.alert('Button is tapped!');
+        })
+      });
+    </script>
+    <ons-button>Click me!</ons-button>
+  
+    <label class="switch">
+      <input type="checkbox" class="switch__input">
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+    <label class="switch">
+      <input type="checkbox" class="switch__input" checked>
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+    <label class="switch">
+      <input type="checkbox" class="switch__input" disabled>
+      <div class="switch__toggle">
+        <div class="switch__handle"></div>
+      </div>
+    </label>
+  
+  
+  
+  </ons-page>
+</ons-navigator>
+  
+  
+  
+  
+  
+  </body>
+
+
+
+</html>
