@@ -9,12 +9,6 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist</PublishAssetsDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <TypeScriptConfiguration Remove="public\NewFolder\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="public\NewFolder\**" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove=".vscode/launch.json" />
   </ItemGroup>
   <ItemGroup>
@@ -31,8 +25,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove=".vscode/launch.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\components\" />
   </ItemGroup>
 </Project>

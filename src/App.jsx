@@ -1,12 +1,10 @@
-import { useState } from 'react'
+ï»¿import { useState } from 'react'
+import * as React from 'react';
+
+// eslint-disable-next-line
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-
-
-
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -21,14 +19,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
+import Dashboard from './components/Dashboard'
 
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
+            {'Copyright '} &copy; &nbsp;
             <Link color="inherit" href="https://mui.com/">
-                Your Website
+                  Isiberis Mediterranea
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -41,7 +39,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 
-export default function SignInSide() {
+export function SignInSide() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -121,12 +119,12 @@ export default function SignInSide() {
                             <Grid container>
                                 <Grid item xs>
                                     <Link href="#" variant="body2">
-                                        Forgot password?
+                                       
                                     </Link>
                                 </Grid>
                                 <Grid item>
                                     <Link href="#" variant="body2">
-                                        {"Don't have an account? Sign Up"}
+                                        {}
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -141,42 +139,25 @@ export default function SignInSide() {
 
 
 function App() {
+    // eslint-disable-next-line
     const [count, setCount] = useState(0)
+
+
+    const sigin_ret = (
+        <>
+            <SignInSide> </SignInSide>
+        </>
+    );
 
 
     const normal_ret = (
         <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
+            <Dashboard></Dashboard>
         </>
-    )
+    );
 
 
-
-
-
-
-
-
-  return 
+    return normal_ret;
 }
 
-export default App
+export default App;
