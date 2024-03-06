@@ -1,6 +1,9 @@
 ﻿import { useState } from 'react'
 import * as React from 'react';
 
+// import getAuth from 'firebase/auth'
+// import onAuthStateChanged from 'firebase/auth'
+
 // eslint-disable-next-line
 import reactLogo from './assets/react.svg'
 import './App.css'
@@ -20,6 +23,20 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Dashboard from './components/Dashboard'
+
+import app from './components/firebase';
+
+// const auth = getAuth(app)
+// onAuthStateChanged(auth,
+//     user => {
+//         if (user != null){
+//             console.log('in');
+//         } else {
+//             console.log('out')
+//         }
+//     }
+// )
+
 
 function Copyright(props) {
     return (

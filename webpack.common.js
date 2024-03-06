@@ -9,4 +9,10 @@ module.exports = {
       clean: true,
       filename: './src/App.jsx',
   },
+  resolve: {
+    fallback: { 
+      "url": require.resolve("url/") ,
+      util: require.resolve("util/")
+    }
+  }
 };
