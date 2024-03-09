@@ -1,8 +1,8 @@
 ﻿import { useState } from 'react'
 import * as React from 'react';
 
-// import getAuth from 'firebase/auth'
-// import onAuthStateChanged from 'firebase/auth'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import { app } from './components/firebase';
 
 // eslint-disable-next-line
 import reactLogo from './assets/react.svg'
@@ -24,20 +24,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import Dashboard from './components/Dashboard'
 
-import app from './components/firebase';
-
-// const auth = getAuth(app)
-// onAuthStateChanged(auth,
-//     user => {
-//         if (user != null){
-//             console.log('in');
-//         } else {
-//             console.log('out')
-//         }
-//     }
-// )
-
-
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -52,9 +38,7 @@ function Copyright(props) {
 }
 
 // TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
-
 
 export function SignInSide() {
     const handleSubmit = (event) => {
@@ -154,11 +138,13 @@ export function SignInSide() {
     );
 }
 
-
 function App() {
     // eslint-disable-next-line
     const [count, setCount] = useState(0)
-
+    const auth = getAuth(app);
+    const user = auth.currentUser
+    
+    console.log( auth.currentUser )
 
     const sigin_ret = (
         <>
@@ -166,15 +152,21 @@ function App() {
         </>
     );
 
-
     const normal_ret = (
         <>
             <Dashboard></Dashboard>
         </>
     );
+    
+    if (user != null){
+        return normal_ret ;
+    } else {
+        return sigin_ret ;
+    }
 
-
-    return normal_ret ;
+    // return normal_ret ;
+    // return <div>Nothing</div>
 }
+
 
 export default App;

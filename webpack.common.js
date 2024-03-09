@@ -11,8 +11,23 @@ module.exports = {
   },
   resolve: {
     fallback: { 
-      "url": require.resolve("url/") ,
-      util: require.resolve("util/")
+      "zlib": false,
+      "async_hooks": false,
+      "path": false,
+      "tls": false,
+      "net": false,
+      "os": false,
+      "crypto": false,
+      "buffer": false,
+      "fs": false,
+      "stream": false,
+      "url": false,
+      "util": false,
+      "dns": false,
+      "child_process": false,
+      "http": false,
+      "https": false,
+      "querystring": false,
     }
   }
 };
